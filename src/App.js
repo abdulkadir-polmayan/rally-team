@@ -52,7 +52,9 @@ const [carsData,setCarsData]=React.useState(carslar)
 
 const yourTeam=[]
 
+const sCars=yourTeam
 
+console.log(sCars)
 
   function select(id){
 
@@ -64,13 +66,14 @@ const yourTeam=[]
       })
     })
 
-    const sİtem=carsData.filter(item=>item.id===id).map(item=>{
-      return <h1>{item}</h1>
+    const sİtem=carsData.filter(item=>item.id===id).map(item=> {
+      return <h2>{item}</h2>
     })
 
     yourTeam.push(sİtem)
 
-    console.log(yourTeam)
+
+    
     
 
    
