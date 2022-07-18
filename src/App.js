@@ -4,7 +4,8 @@ import boxData from './boxes'
 import Box from './Components/Box';
 
 
-
+//* those are just box practice to 
+//* ensure my code working
 // export default function App(){
 
 //   const [boxes,setBoxes]=React.useState(boxData)
@@ -42,6 +43,8 @@ function App() {
 
 //! change isSelected property via json file
 
+//* ı wanna show selected cars top of the page 
+//* ı cant figura out
 
 
 const [carsData,setCarsData]=React.useState(carslar)
@@ -57,9 +60,6 @@ const [yourTeam,setYourTeam]=React.useState()
           :item
       })
     })
-
-   
-    
   }
 
   const cars = carsData.map(item=>{
@@ -78,6 +78,7 @@ const [yourTeam,setYourTeam]=React.useState()
   return (
     <div className="App">
       <h1>RALLY - TEAM </h1>
+      <h2>selected cars : img came here</h2>
       
       {cars}
       </div>
