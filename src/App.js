@@ -48,7 +48,10 @@ function App() {
 
 
 const [carsData,setCarsData]=React.useState(carslar)
-const [yourTeam,setYourTeam]=React.useState()
+// const [yourTeam,setYourTeam]=React.useState()
+
+const yourTeam=[]
+
 
 
   function select(id){
@@ -60,7 +63,19 @@ const [yourTeam,setYourTeam]=React.useState()
           :item
       })
     })
+
+    const sİtem=carsData.filter(item=>item.id===id).map(item=>{
+      return <h1>{item}</h1>
+    })
+
+    yourTeam.push(sİtem)
+
+    console.log(yourTeam)
+    
+
+   
   }
+
 
   const cars = carsData.map(item=>{
     return (
@@ -77,6 +92,7 @@ const [yourTeam,setYourTeam]=React.useState()
 
   return (
     <div className="App">
+      {yourTeam}
       <h1>RALLY - TEAM </h1>
       <h2>selected cars : img came here</h2>
       
