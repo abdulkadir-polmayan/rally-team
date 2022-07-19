@@ -48,36 +48,33 @@ function App() {
 
 
 const [carsData,setCarsData]=React.useState(carslar)
-// const [yourTeam,setYourTeam]=React.useState()
+const [yourTeam,setYourTeam]=React.useState()
 
-const yourTeam=[]
+React.useEffect(()=>{
+  setYourTeam(team)
+  
+},5)
 
-const sCars=yourTeam
+const team=[]
 
-console.log(sCars)
 
-  function select(id){
-
-    setCarsData(prevCarsData=>{
-      return prevCarsData.map((item)=>{
-        return item.id === id 
-          ?{...item,isSelected:!item.isSelected}
-          :item
-      })
+function select(id){
+  
+  setCarsData(prevCarsData=>{
+    return prevCarsData.map((item)=>{
+      return item.id === id 
+      ?{...item,isSelected:!item.isSelected}
+      :item
     })
+  })
+  
+  const sİtem=carsData.filter(item=>item.id===id)
 
-    const sİtem=carsData.filter(item=>item.id===id).map(item=> {
-      return <h2>{item}</h2>
-    })
-
-    yourTeam.push(sİtem)
-
-
-    
-    
-
-   
+  team.push(sİtem)
+  
+  console.log(team)
   }
+
 
 
   const cars = carsData.map(item=>{
@@ -95,7 +92,7 @@ console.log(sCars)
 
   return (
     <div className="App">
-      {yourTeam}
+      {JSON.stringify(yourTeam)}
       <h1>RALLY - TEAM </h1>
       <h2>selected cars : img came here</h2>
       
